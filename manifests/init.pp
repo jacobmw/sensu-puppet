@@ -158,6 +158,10 @@
 #   String.  Hostname of redis to be used by sensu
 #   Default: 127.0.0.1
 #
+# [*rabbitmq_cluster*]
+#   Array. Rabbitmq Cluster configuration and connection information for one or more Cluster
+#   Default: Not configured
+#
 # [*redis_port*]
 #   Integer.  Redis port to be used by sensu
 #   Default: 6379
@@ -367,6 +371,7 @@ class sensu (
   $rabbitmq_ssl_cert_chain        = undef,
   $rabbitmq_reconnect_on_error    = false,
   $rabbitmq_prefetch              = 1,
+  $rabbitmq_cluster               = undef,
   $redis_host                     = '127.0.0.1',
   $redis_port                     = 6379,
   $redis_password                 = undef,
